@@ -1,0 +1,35 @@
+{
+  "name": "rct-md-loader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engine": {
+      "node": "8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jinzhubaofu/rct-md-loader.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jinzhubaofu/rct-md-loader/issues"
+  },
+  "dependencies": {
+    "highlight.js": "^9.10.0",
+    "htmlparser2": "^3.9.2",
+    "loader-utils": "^1.1.0",
+    "lodash.camelcase": "^4.3.0",
+    "lodash.escape": "^4.0.1",
+    "lodash.unescape": "^4.0.1",
+    "markdown-it": "^8.3.1"
+  },
+  "homepage": "https://github.com/jinzhubaofu/rct-md-loader#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1"
+  }
+}
