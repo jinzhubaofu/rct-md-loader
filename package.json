@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engine": {
-      "node": "8"
+    "node": "8"
   },
   "repository": {
     "type": "git",
@@ -20,12 +20,14 @@
     "url": "https://github.com/jinzhubaofu/rct-md-loader/issues"
   },
   "dependencies": {
+    "hash-sum": "^1.0.2",
     "highlight.js": "^9.10.0",
     "htmlparser2": "^3.9.2",
     "loader-utils": "^1.1.0",
     "lodash.camelcase": "^4.3.0",
     "lodash.escape": "^4.0.1",
     "lodash.unescape": "^4.0.1",
+    "lru-cache": "^4.1.1",
     "markdown-it": "^8.3.1"
   },
   "homepage": "https://github.com/jinzhubaofu/rct-md-loader#readme",
