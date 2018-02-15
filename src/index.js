@@ -6,10 +6,17 @@
 const loaderUtils = require('loader-utils');
 const markdown = require('./markdown');
 const parse = require('./parse');
+const LRU = require('lru-cache');
+const hashSum = require('hash-sum');
+
+const cache = new LRU({max: 100});
 
 module.exports = function (source) {
 
     let callback = this.async();
+    let resourcePath = this.resourcePath;
+    let hash = hashSum(source);
+    let cacheKey = `${resourcePath}|${hash}`;
 
     let options = Object.assign(
         {
@@ -26,15 +33,18 @@ module.exports = function (source) {
         this.options.reactMarkdown,
     );
 
-    // console.log(options);
-
-    let code = markdown(options).render(source);
-
     let {id = 'main'} = options;
 
-    console.time(this.resource);
+    let cachedParts = cache.get(cacheKey);
+    if (cachedParts) {
+        callback(null, cachedParts[id]);
+        return;
+    }
+
+    let code = markdown(options).render(source);
     let parts = parse(code, options, this);
-    console.timeEnd(this.resource);
+
+    cache.set(cacheKey, parts);
 
     callback(null, parts[id]);
 
