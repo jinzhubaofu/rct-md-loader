@@ -21,14 +21,14 @@
   },
   "dependencies": {
     "hash-sum": "^1.0.2",
-    "highlight.js": "^9.10.0",
     "htmlparser2": "^3.9.2",
     "loader-utils": "^1.1.0",
     "lodash.camelcase": "^4.3.0",
     "lodash.escape": "^4.0.1",
     "lodash.unescape": "^4.0.1",
     "lru-cache": "^4.1.1",
-    "markdown-it": "^8.3.1"
+    "markdown-it": "^8.3.1",
+    "prismjs": "^1.11.0"
   },
   "homepage": "https://github.com/jinzhubaofu/rct-md-loader#readme",
   "devDependencies": {

@@ -60,7 +60,11 @@ function stringifyLoaders(loaders) {
         .join('!');
 }
 
-function generate(dom, {codeBlock}, context) {
+function defaultGetCodeBlockClass() {
+    return 'language-';
+}
+
+function generate(dom, {codeBlock, getCodeBlockClass = defaultGetCodeBlockClass}, context) {
 
     let components = [];
     let codeBlocks = [];
@@ -96,7 +100,7 @@ function generate(dom, {codeBlock}, context) {
         }
 
         if (node.name === 'code' && node.parent && node.parent.name === 'pre') {
-            node.parent.attribs.className = 'hljs';
+            node.parent.attribs.className = getCodeBlockClass(node.parent);
         }
 
         if (/[A-Z]/.test(node.name.charAt(0))) {
